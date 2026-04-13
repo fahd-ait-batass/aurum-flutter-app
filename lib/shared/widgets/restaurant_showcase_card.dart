@@ -21,6 +21,8 @@ class RestaurantShowcaseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool compactHeader = height < 150;
+
     return SurfaceCard(
       onTap: onTap,
       padding: EdgeInsets.zero,
@@ -30,7 +32,7 @@ class RestaurantShowcaseCard extends StatelessWidget {
         children: <Widget>[
           Container(
             height: height,
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(compactHeader ? 16 : 20),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
               gradient: LinearGradient(
@@ -46,7 +48,7 @@ class RestaurantShowcaseCard extends StatelessWidget {
                   bottom: -6,
                   child: Icon(
                     restaurant.heroIcon,
-                    size: 88,
+                    size: compactHeader ? 72 : 88,
                     color: const Color(0xFFF8F1E7).withValues(alpha: 0.82),
                   ),
                 ),
@@ -55,6 +57,15 @@ class RestaurantShowcaseCard extends StatelessWidget {
                   children: <Widget>[
                     StatusChip(
                       label: restaurant.badgeLabel,
+                      padding: compactHeader
+                          ? const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 6,
+                            )
+                          : const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 8,
+                            ),
                       backgroundColor: const Color(0x29151821),
                       foregroundColor: const Color(0xFFF6C56B),
                       borderColor: const Color(0x554A3422),
@@ -66,6 +77,13 @@ class RestaurantShowcaseCard extends StatelessWidget {
                         child: IconButton.filledTonal(
                           onPressed: onFavoriteTap,
                           style: IconButton.styleFrom(
+                            visualDensity: compactHeader
+                                ? VisualDensity.compact
+                                : VisualDensity.standard,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            minimumSize: compactHeader
+                                ? const Size(40, 40)
+                                : null,
                             backgroundColor: const Color(0x33151821),
                             foregroundColor: isFavorite
                                 ? const Color(0xFFFF8B5C)

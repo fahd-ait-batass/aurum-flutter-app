@@ -10,48 +10,59 @@ class QuickActionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SurfaceCard(
-      onTap: onTap,
-      padding: const EdgeInsets.all(18),
-      backgroundColor: const Color(0xFF171B23),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            width: 52,
-            height: 52,
-            decoration: BoxDecoration(
-              color: item.accentColor.withValues(alpha: 0.14),
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Icon(item.icon, color: item.accentColor),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final bool compact = constraints.maxHeight < 196;
+        final double iconSize = compact ? 46 : 52;
+        final double iconRadius = compact ? 16 : 18;
+        final double topGap = compact ? 14 : 18;
+        final int titleLines = compact ? 1 : 2;
+        final int subtitleLines = compact ? 2 : 3;
+
+        return SurfaceCard(
+          onTap: onTap,
+          padding: const EdgeInsets.all(18),
+          backgroundColor: const Color(0xFF171B23),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: iconSize,
+                height: iconSize,
+                decoration: BoxDecoration(
+                  color: item.accentColor.withValues(alpha: 0.14),
+                  borderRadius: BorderRadius.circular(iconRadius),
+                ),
+                child: Icon(item.icon, color: item.accentColor),
+              ),
+              SizedBox(height: topGap),
+              Text(
+                item.title,
+                maxLines: titleLines,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 6),
+              Expanded(
+                child: Text(
+                  item.subtitle,
+                  maxLines: subtitleLines,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Align(
+                alignment: Alignment.centerRight,
+                child: Icon(
+                  Icons.arrow_forward_rounded,
+                  color: Color(0xFFF6C56B),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 18),
-          Text(
-            item.title,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          const SizedBox(height: 6),
-          Expanded(
-            child: Text(
-              item.subtitle,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ),
-          const SizedBox(height: 8),
-          const Align(
-            alignment: Alignment.centerRight,
-            child: Icon(
-              Icons.arrow_forward_rounded,
-              color: Color(0xFFF6C56B),
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

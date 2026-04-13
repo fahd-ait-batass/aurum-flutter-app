@@ -48,6 +48,8 @@ class FeaturedExperienceCard extends StatelessWidget {
               const SizedBox(height: 18),
               Text(
                 'Chef\'s tasting\nat ${restaurant.name}',
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   fontSize: 32,
                   height: 1.05,
@@ -59,10 +61,11 @@ class FeaturedExperienceCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: 20),
-              Row(
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
                 children: <Widget>[
                   _InfoPill(label: restaurant.priceTier, icon: Icons.sell_rounded),
-                  const SizedBox(width: 10),
                   _InfoPill(
                     label: restaurant.availableSlots.first,
                     icon: Icons.schedule_rounded,

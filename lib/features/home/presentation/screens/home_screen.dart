@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         else
           SizedBox(
-            height: 332,
+            height: 344,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: filteredPopularDishes.length,
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisCount: 2,
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
-            mainAxisExtent: 188,
+            mainAxisExtent: 196,
           ),
           itemCount: homeQuickActions.length,
           itemBuilder: (BuildContext context, int index) {
