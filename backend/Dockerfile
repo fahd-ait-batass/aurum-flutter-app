@@ -9,11 +9,10 @@ COPY . .
 RUN dart pub get --offline
 RUN dart compile exe bin/server.dart -o /app/bin/server
 
-FROM debian:bookworm-slim
+FROM dart:stable AS runtime
 
 WORKDIR /app
 
-COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/server
 COPY data /app/data
 
