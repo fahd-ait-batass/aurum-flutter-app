@@ -198,7 +198,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
           ),
           const SizedBox(height: 14),
           SizedBox(
-            height: 300,
+            height: 332,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: dishes.length,

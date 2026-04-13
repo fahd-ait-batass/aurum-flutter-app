@@ -26,10 +26,22 @@ class QuickActionTile extends StatelessWidget {
             ),
             child: Icon(item.icon, color: item.accentColor),
           ),
-          const Spacer(),
-          Text(item.title, style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 18),
+          Text(
+            item.title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           const SizedBox(height: 6),
-          Text(item.subtitle, style: Theme.of(context).textTheme.bodyMedium),
+          Expanded(
+            child: Text(
+              item.subtitle,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
           const SizedBox(height: 8),
           const Align(
             alignment: Alignment.centerRight,

@@ -32,6 +32,7 @@ class _AppShellState extends State<AppShell> {
 
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 76,
         leadingWidth: 74,
         leading: Padding(
           padding: const EdgeInsets.only(left: 18),
@@ -52,6 +53,7 @@ class _AppShellState extends State<AppShell> {
           ),
         ),
         title: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text('Aurum Table'),

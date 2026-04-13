@@ -88,10 +88,17 @@ class RestaurantShowcaseCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(restaurant.name, style: Theme.of(context).textTheme.titleLarge),
+                Text(
+                  restaurant.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
                 const SizedBox(height: 6),
                 Text(
                   '${restaurant.cuisine} | ${restaurant.neighborhood}',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.labelMedium?.copyWith(
                     color: const Color(0xFFF6C56B),
                   ),
@@ -99,6 +106,8 @@ class RestaurantShowcaseCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   restaurant.moodLine,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const SizedBox(height: 14),
