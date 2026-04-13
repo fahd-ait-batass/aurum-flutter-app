@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Aurum Table (Local Backend)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "toolArgs": [
+        "--dart-define=AURUM_APP_ENV=development",
+        "--dart-define=AURUM_BACKEND_TARGET=local"
+      ]
+    },
+    {
+      "name": "Aurum Table (Hosted Backend)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "toolArgs": [
+        "--dart-define=AURUM_APP_ENV=production",
+        "--dart-define=AURUM_BACKEND_TARGET=hosted",
+        "--dart-define=AURUM_REMOTE_PROVIDER=rest",
+        "--dart-define=AURUM_REMOTE_BASE_URL=https://your-service.up.railway.app/api"
+      ]
+    }
+  ]
+}
