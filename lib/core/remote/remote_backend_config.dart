@@ -31,7 +31,7 @@ class RemoteBackendConfig {
     );
     const String baseUrl = String.fromEnvironment(
       'AURUM_REMOTE_BASE_URL',
-      defaultValue: '',
+      defaultValue: 'https://aurum-flutter-app-production.up.railway.app/api',
     );
     const String localBaseUrl = String.fromEnvironment(
       'AURUM_LOCAL_BACKEND_URL',

@@ -20,7 +20,7 @@
         "--dart-define=AURUM_APP_ENV=production",
         "--dart-define=AURUM_BACKEND_TARGET=hosted",
         "--dart-define=AURUM_REMOTE_PROVIDER=rest",
-        "--dart-define=AURUM_REMOTE_BASE_URL=https://your-service.up.railway.app/api"
+        "--dart-define=AURUM_REMOTE_BASE_URL=https://aurum-flutter-app-production.up.railway.app/api"
       ]
     }
   ]
