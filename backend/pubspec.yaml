@@ -1,0 +1,8 @@
+name: aurum_backend
+description: Local REST backend for the Aurum Table Flutter app.
+publish_to: 'none'
+
+version: 1.0.0
+
+environment:
+  sdk: ^3.11.4

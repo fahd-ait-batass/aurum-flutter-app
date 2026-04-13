@@ -1,0 +1,110 @@
+{
+  "nadia@aurumtable.app": {
+    "isAuthenticated": true,
+    "userProfile": {
+      "name": "Nadia Toumi",
+      "initials": "NT",
+      "email": "nadia@aurumtable.app",
+      "city": "Casablanca",
+      "membershipTier": "Gold tier",
+      "points": 4280,
+      "bio": "Dining curator with a taste for chef counters, jazz rooms, and late tasting menus."
+    },
+    "favoriteRestaurantIds": [
+      "aurum_lounge",
+      "velvet_oyster"
+    ],
+    "favoriteDishIds": [
+      "lobster_nocturne"
+    ],
+    "cartItems": [],
+    "reservations": [
+      {
+        "id": "resv-check",
+        "restaurantId": "aurum_lounge",
+        "date": "2026-04-20T00:00:00.000",
+        "createdAt": "2026-04-13T18:00:00.000",
+        "timeLabel": "8:15 PM",
+        "partySize": 2,
+        "experienceLabel": "Chef tasting",
+        "statusLabel": "Confirmed",
+        "guestName": "Nadia Toumi",
+        "guestEmail": "nadia@aurumtable.app",
+        "specialRequest": "Quiet booth"
+      }
+    ],
+    "orderHistory": [
+      {
+        "reference": "AT-CHECK",
+        "placedAt": "2026-04-13T19:00:00.000",
+        "itemsCount": 1,
+        "totalMad": 320.0,
+        "lineItems": [
+          {
+            "dishId": "lobster_nocturne",
+            "quantity": 1
+          }
+        ],
+        "statusLabel": "Delivered",
+        "fulfillmentLabel": "Express delivery",
+        "paymentLabel": "Visa **** 4421",
+        "orderNote": ""
+      }
+    ]
+  },
+  "deploy-check@aurum.local": {
+    "isAuthenticated": true,
+    "userProfile": {
+      "fullName": "Deploy Check",
+      "email": "deploy-check@aurum.local"
+    },
+    "favoriteRestaurantIds": [
+      "aurum_lounge"
+    ],
+    "favoriteDishIds": [
+      "lobster_nocturne"
+    ],
+    "cartItems": [
+      {
+        "dishId": "lobster_nocturne",
+        "priceMad": 320,
+        "quantity": 1
+      }
+    ],
+    "reservations": [
+      {
+        "partySize": 2,
+        "reservationDateIso": "2026-04-20T20:00:00.000Z",
+        "restaurantId": "aurum_lounge",
+        "status": "confirmed",
+        "id": "res_deploy_1"
+      }
+    ],
+    "orderHistory": [
+      {
+        "totalMad": 320,
+        "placedAtIso": "2026-04-13T18:00:00.000Z",
+        "status": "placed",
+        "id": "ord_deploy_1",
+        "itemCount": 1
+      }
+    ]
+  },
+  "fahd@aurumtable.app": {
+    "isAuthenticated": false,
+    "userProfile": {
+      "name": "Nadia Toumi",
+      "initials": "NT",
+      "email": "Fahd@aurumtable.app",
+      "city": "Casablanca",
+      "membershipTier": "Gold tier",
+      "points": 4280,
+      "bio": "Dining curator with a taste for chef counters, jazz rooms, and late tasting menus."
+    },
+    "favoriteRestaurantIds": [],
+    "favoriteDishIds": [],
+    "cartItems": [],
+    "reservations": [],
+    "orderHistory": []
+  }
+}
